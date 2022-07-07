@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_task"
+    app:startDestination="@id/answersFragment">
+
+    <fragment
+        android:id="@+id/answersFragment"
+        android:name="org.evolveapp.marathoner.ui.admin.marathon.tasks.manage.answers.AnswersFragment"
+        android:label="fragment_answers"
+        tools:layout="@layout/fragment_answers" />
+    <fragment
+        android:id="@+id/approvedFragment"
+        android:name="org.evolveapp.marathoner.ui.admin.marathon.tasks.manage.approved.ApprovedFragment"
+        android:label="fragment_approved"
+        tools:layout="@layout/fragment_approved" />
+    <fragment
+        android:id="@+id/adminDiscussionsFragment"
+        android:name="org.evolveapp.marathoner.ui.admin.marathon.tasks.manage.discussions.DiscussionsFragment"
+        android:label="fragment_admin_discussions"
+        tools:layout="@layout/fragment_admin_discussions" />
+    <fragment
+        android:id="@+id/notSendFragment"
+        android:name="org.evolveapp.marathoner.ui.admin.marathon.tasks.manage.notsend.NotSendFragment"
+        android:label="fragment_not_send"
+        tools:layout="@layout/fragment_not_send" />
+
+
+</navigation>

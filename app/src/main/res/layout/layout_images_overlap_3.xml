@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:background="#DDD">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        app:cardCornerRadius="@dimen/_12sdp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/strokeOverlapImage">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F00"
+            android:contentDescription="@string/icon"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dummy_user" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginStart="@dimen/marginOverlapImage"
+        app:cardCornerRadius="@dimen/_12sdp"
+        app:cardElevation="-1dp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/strokeOverlapImage">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#7E57C2"
+            android:contentDescription="@string/icon"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dummy_participant" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginStart="@dimen/marginOverlapImage"
+        app:cardCornerRadius="@dimen/_12sdp"
+        app:cardElevation="-2dp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/strokeOverlapImage">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#D4E157"
+            android:contentDescription="@string/icon"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dummy_user" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardParent"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:cardBackgroundColor="@color/color_0D000000"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="true">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="@dimen/_8sdp"
+            android:gravity="center"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp"
+            android:text="Новые"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/ic_dot" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

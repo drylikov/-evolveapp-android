@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/discussionBackground"
+        tools:context=".ui.marathon.details.discussion.DiscussionFragment">
+
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@id/bottom"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/listitem_message_received" />
+
+                    <include layout="@layout/listitem_message_received" />
+
+                    <include layout="@layout/listitem_message_received" />
+
+                    <include layout="@layout/listitem_message_received" />
+                    <include layout="@layout/listitem_message_received" />
+                    <include layout="@layout/listitem_message_received" />
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerLeftTop="26dp"
+            app:cornerRightTop="26dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_8sdp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#EDEDED"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="Написать комментарий…"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:padding="@dimen/_8sdp"
+                        android:textAlignment="center" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

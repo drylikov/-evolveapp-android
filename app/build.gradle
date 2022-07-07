@@ -1,0 +1,146 @@
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    id("androidx.navigation.safeargs")
+    id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
+    id("kotlin-parcelize")
+}
+
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+android {
+    compileSdk = 31
+
+    defaultConfig {
+        applicationId = "org.evolveapp.marathoner"
+        minSdk = 21
+        targetSdk = 31
+        versionCode = 1
+        versionName = "0.2"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+
+        release {
+            storeFile file("C:\\Users\\DELL\\AndroidStudioProjects\\Marathoner\\keystore_marathoner.jks")
+            storePassword localProperties["STORE_PASSWORD"]
+            keyAlias = localProperties["KEY_ALIAS"]
+            keyPassword localProperties["KEY_PASSWORD"]
+        }
+
+        debug {
+            storeFile file("C:\\Users\\DELL\\AndroidStudioProjects\\Marathoner\\keystore_marathoner.jks")
+            storePassword localProperties["STORE_PASSWORD"]
+            keyAlias = localProperties["KEY_ALIAS"]
+            keyPassword localProperties["KEY_PASSWORD"]
+        }
+
+    }
+
+
+    buildTypes {
+
+        release {
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField 'String', "SERVER_CLIENT_ID", localProperties["SERVER_CLIENT_ID"]
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+            buildConfigField 'String', "SERVER_CLIENT_ID", localProperties["SERVER_CLIENT_ID"]
+        }
+
+    }
+
+    dataBinding {
+        enabled(true)
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+
+            def applicationId = defaultConfig.applicationId
+            def builtType = variant.buildType.name
+            def versionName = variant.versionName
+            def versionCode = variant.versionCode
+            def flavor = variant.flavorName
+
+            outputFileName = "${applicationId}_v${versionName}-${versionCode}-${builtType}.apk"
+
+        }
+    }
+
+}
+
+dependencies {
+
+
+    implementation project(path: ":data")
+    implementation project(path: ":domain")
+    implementation("androidx.core:core-ktx:1.6.0")
+    implementation("androidx.appcompat:appcompat:1.3.1")
+    implementation("com.google.android.material:material:1.4.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.1")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    implementation("com.intuit.sdp:sdp-android:1.0.6")
+    implementation("org.michaelbel:bottomsheet:1.2.3")
+    implementation("com.github.zladnrms:RoundableLayout:1.1.3")
+    implementation("com.facebook.shimmer:shimmer:0.5.0@aar")
+    implementation("com.wdullaer:materialdatetimepicker:4.2.3")
+
+    implementation("com.jakewharton.timber:timber:5.0.1")
+
+
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
+
+    // logging-interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
+
+    // glide
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    kapt("com.github.bumptech.glide:compiler:4.12.0")
+
+    implementation platform("com.google.firebase:firebase-bom:28.4.1")
+
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+
+    implementation("id.zelory:compressor:3.0.1")
+
+    implementation ("com.github.mukeshsolanki:country-picker-android:2.0.4")
+
+    implementation("com.isseiaoki:simplecropview:1.1.8")
+
+    implementation ("com.google.code.gson:gson:2.8.8")
+
+    //debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("com.google.truth:truth:1.1.3")
+
+    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+
+
+    testImplementation("org.mockito:mockito-core:3.12.4")
+
+}

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.evolveapp.marathoner.ui.admin.marathon.posts.add.AddPostViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.admin.marathon.posts.add.AddPostActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/icon"
+                android:src="@drawable/ic_arrow_back_black_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/publish"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_45sdp"
+                android:paddingStart="@dimen/_25sdp"
+                android:paddingEnd="@dimen/_25sdp"
+                android:text="@string/publish"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:textStyle="bold"
+                app:cornerRadius="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:requiresFadingEdge="vertical"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/bottom"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/transparent"
+                    android:hint="@string/write_a_new_post_here"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:padding="@dimen/_16sdp"
+                    android:requiresFadingEdge="horizontal"
+                    android:text="@={viewModel.postText}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardPhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="10dp"
+                        app:cardPreventCornerOverlap="true">
+
+                        <ImageView
+                            android:id="@+id/photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#DDD"
+                            android:contentDescription="@string/icon">
+
+                        </ImageView>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <ImageButton
+                        android:id="@+id/removePhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/icon"
+                        android:elevation="5dp"
+                        android:onClick="@{()->viewModel.removeUploadedPhoto()}"
+                        android:src="@drawable/ic_close_black_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_16sdp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="10dp"
+                        app:cardPreventCornerOverlap="true">
+
+                        <ImageView
+                            android:id="@+id/video"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#DDD"
+                            android:contentDescription="@string/icon">
+
+                        </ImageView>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <ImageButton
+                        android:id="@+id/removeVideo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/icon"
+                        android:elevation="5dp"
+                        android:onClick="@{()->viewModel.removeUploadedVideo()}"
+                        android:src="@drawable/ic_close_black_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageButton
+                        android:id="@+id/playVideo"
+                        android:layout_width="@dimen/_48sdp"
+                        android:layout_height="@dimen/_48sdp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/icon"
+                        android:elevation="5dp"
+                        android:onClick="@{()->viewModel.removeUploadedPhoto()}"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_round_play_circle_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uploadPhoto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_weight="0.333"
+                app:cardBackgroundColor="#0D00000D"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="@string/photo"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/ic_img"
+                    app:drawableTint="@color/gray_600" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uploadVideo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_weight="0.333"
+                app:cardBackgroundColor="#0D00000D"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="@string/video"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/ic_round_video_library_24"
+                    app:drawableTint="@color/gray_600" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/schedule"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.333"
+                app:cardBackgroundColor="#0D00000D"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:id="@+id/scheduleLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="@string/now"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/ic_round_schedule_24"
+                    app:drawableTint="@color/gray_600" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/loading"
+            layout="@layout/loading_primary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

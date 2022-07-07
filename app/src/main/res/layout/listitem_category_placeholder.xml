@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:cardBackgroundColor="#0D000000"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="true">
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

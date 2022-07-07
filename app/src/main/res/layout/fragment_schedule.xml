@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="32dp"
+        app:cardPreventCornerOverlap="true"
+        tools:context=".ui.admin.marathon.posts.schedule.ScheduleFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_7sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    app:cardBackgroundColor="@color/colorShimmer"
+                    app:cardCornerRadius="@dimen/_20sdp"
+                    app:cardElevation="0dp" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:text="@string/when_do_you_want_to_publishing_your_post"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/close"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageButton
+                        android:id="@+id/close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/icon"
+                        android:src="@drawable/ic_close_black_circle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:text="@string/we_ll_publishing_your_post_in_the_selected_date_and_time" />
+
+
+                <RadioGroup
+                    android:id="@+id/timing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/now"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/now"
+                        android:textColor="@color/radio_flat_text_selector"
+                        android:textStyle="bold" />
+
+                    <Space
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="wrap_content" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/late"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/late"
+                        android:textColor="@color/radio_flat_text_selector"
+                        android:textStyle="bold" />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/layoutLate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gapBackground" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutPickDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/_16sdp"
+                        android:paddingBottom="@dimen/_16sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/_8sdp"
+                            android:text="@string/date"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                            app:drawableStartCompat="@drawable/ic_calendar"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/selectedDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tap_to_select"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gapBackground" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutPickTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/_16sdp"
+                        android:paddingBottom="@dimen/_16sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:text="@string/time"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                            app:drawableStartCompat="@drawable/ic_round_schedule_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/selectedTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tap_to_select"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/done"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/done"
+                    android:textStyle="bold"
+                    app:cornerRadius="56dp"
+                    app:icon="@drawable/ic_round_done_24"
+                    app:iconGravity="textStart" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

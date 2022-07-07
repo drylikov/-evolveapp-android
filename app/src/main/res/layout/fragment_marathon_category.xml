@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/bottomSheetCorner"
+        app:cardPreventCornerOverlap="true"
+        tools:context=".ui.admin.marathons.create.category.MarathonCategoryFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    app:cardBackgroundColor="@color/colorShimmer"
+                    app:cardCornerRadius="@dimen/_20sdp"
+                    app:cardElevation="0dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_16sdp">
+
+                    <ImageButton
+                        android:id="@+id/close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/icon"
+                        android:src="@drawable/ic_close_black_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/marathon_category"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:text="@string/select_the_category_of_your_marathon_so_it_will_be_easier_to_find"
+                    android:textAlignment="center" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/listitem_create_marathon_category" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/select"
+                    style="@style/MaterialButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:text="@string/select"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:cornerRadius="30dp" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <include
+            android:id="@+id/loading"
+            layout="@layout/loading_primary" />
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

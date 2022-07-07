@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_16sdp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_40sdp"
+                android:contentDescription="@string/icon"
+                android:src="@drawable/animal_1"
+                app:layout_constraintEnd_toStartOf="@id/v"
+                app:layout_constraintTop_toBottomOf="@id/h" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_96sdp"
+                android:contentDescription="@string/icon"
+                android:src="@drawable/animal_2"
+                app:layout_constraintBottom_toTopOf="@id/h"
+                app:layout_constraintStart_toStartOf="@id/v" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_100sdp"
+                android:contentDescription="@string/icon"
+                android:src="@drawable/animal_3"
+                app:layout_constraintEnd_toStartOf="@id/v"
+                app:layout_constraintTop_toBottomOf="@id/h" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:contentDescription="@string/icon"
+                android:src="@drawable/animal_4"
+                app:layout_constraintStart_toEndOf="@id/v"
+                app:layout_constraintTop_toBottomOf="@id/h" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:contentDescription="@string/icon"
+                android:src="@drawable/animal_5"
+                app:layout_constraintBottom_toTopOf="@id/h"
+                app:layout_constraintEnd_toStartOf="@id/v" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:contentDescription="@string/icon"
+                android:elevation="5dp"
+                android:src="@drawable/animal_6"
+                app:layout_constraintBottom_toTopOf="@id/h"
+                app:layout_constraintStart_toEndOf="@id/v" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                app:cardCornerRadius="@dimen/_35sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/profilePic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/icon"
+                    android:src="@drawable/ic_profile_userpic" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:text="@string/you_can_find_friends_in_the_search_or_by_inviting_them_by_clicking_the_button"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:textColor="#80000000" />
+
+    </LinearLayout>
+</layout>

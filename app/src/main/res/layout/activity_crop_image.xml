@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".ui.crop.CropImageActivity">
+
+        <com.isseiaoki.simplecropview.CropImageView
+            android:id="@+id/cropImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:scv_background_color="@color/black"
+            custom:scv_crop_mode="fit_image"
+            custom:scv_frame_color="@color/white"
+            custom:scv_frame_stroke_weight="1dp"
+            custom:scv_guide_color="#80FFFFFF"
+            custom:scv_guide_show_mode="show_always"
+            custom:scv_guide_stroke_weight="1dp"
+            custom:scv_handle_color="@color/white"
+            custom:scv_handle_show_mode="show_always"
+            custom:scv_handle_size="14dp"
+            custom:scv_min_frame_size="50dp"
+            custom:scv_overlay_color="#80000000"
+            custom:scv_touch_padding="8dp" />
+
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/icon"
+            android:src="@drawable/ic_back_invert"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_margin="@dimen/_24sdp"
+            android:text="@string/add_photo"
+            android:textStyle="bold"
+            custom:cornerRadius="@dimen/_20sdp"
+            custom:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

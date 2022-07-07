@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottomSheetCorner">32dp</dimen>
+    <dimen name="marginOverlapImage">-19dp</dimen>
+    <dimen name="strokeOverlapImage">2dp</dimen>
+</resources>
